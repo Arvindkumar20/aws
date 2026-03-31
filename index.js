@@ -5,8 +5,12 @@ app.get("/api/health", (req, res) => {
     message: "done",
   });
 });
-
-app.listen(4000, () => {
-  console.log("server is running on port : ", 4000);
+app.get("/", (req, res) => {
+  return res.status(200).json({
+    message: "hello",
+  });
 });
 
+app.listen(4000, "0.0.0.0", () => {
+  console.log("server is running on port : ", 4000);
+});
